@@ -57,6 +57,23 @@ class LinkedList {
         }
     }
 
+    void display () {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the choice to display the elements: ");
+        int choice = sc.nextInt();
+        switch (choice) {
+            case 1:
+                Node n = head;
+                while (n != null) {
+                    System.out.println(n.data);
+                    n = n.next;
+                }
+                break;
+            default:
+                System.out.println("Invalid Choice");    
+        }
+    }
+
     public static void public static void main(String[] args) {
         LinkedList linkedList = new LinkedList();
         linkedList.insert(1);
@@ -65,5 +82,6 @@ class LinkedList {
         linkedList.insert(4);
         linkedList.insertion_at_end(5);
         linkedList.print();
+        linkedList.display();
     }
 }
